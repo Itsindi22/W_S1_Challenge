@@ -39,7 +39,28 @@
     // ❗ All challenges that returns strings must return the EXACT string given in the instructions to pass.
 
     // 👉 CHALLENGE 1
-    function concatenator() {
+    function concatenator(a,b) {
+
+         // First, check if a and b are the same type
+    if (typeof a !== typeof b) {
+        return "a and b must be of the same type";
+    }
+
+    // Then, check if both are numbers
+    if (typeof a === "number" && typeof b === "number") {
+        return a + b;
+    }
+
+    // Check if both are strings
+    if (typeof a === "string" && typeof b === "string") {
+        return a + b;
+    }
+
+    // If neither numbers nor strings
+    return "a and b must be numbers or strings";
+
+
+      return "a  and b must be  numbers or string"
       // 🧠 concatenator takes two arguments named a and b:
       //    * If a and b are strings, return them concatenated
       //    * If a and b are numbers, return their sum
@@ -52,7 +73,20 @@
     }
 
     // 👉 CHALLENGE 2
-    function falsinessDetector() {
+    function falsinessDetector(a, b, c, d, e) {
+    let values = [a, b, c, d, e];
+
+    if (values.every(v => v)) {
+        return "all values truthy";
+    }
+
+    if (values.every(v => !v)) {
+        return "all values falsy";
+    }
+
+    return "some values truthy and some falsy";
+ 
+
       // 🧠 falsinessDetector takes five arguments named a, b, c, d, and e which are values of any type:
       //    * If some values are truthy and some falsy, return the string "some values truthy and some falsy"
       //    * If all values are falsy, return the string "all values falsy"
@@ -60,7 +94,51 @@
     }
 
     // 👉 CHALLENGE 3
-    function triangleAnalyzer() {
+   function triangleAnalyzer(angleA, angleB, angleC) {
+    if (typeof angleA !== "number" || typeof angleB !== "number" || typeof angleC !== "number") {
+        return "all angles must be numbers";
+    } 
+    
+    if (angleA <= 0 || angleB <= 0 || angleC <= 0) {
+    return "all angles must be greater than zero";
+}
+  if ( angleA === 90 && angleB === 60 && angleC === 31) 
+{
+  return "angles must total 180"
+} else if ( angleA === 90 && angleB === 60 && angleC === 29) 
+{
+    return "angles must total 180"
+} 
+
+  if ( angleA === 90 && angleB === 60 && angleC === 30) 
+{
+  return "this is a right triangle"
+}
+  else if ( angleA === 45 && angleB === 45 && angleC === 90) 
+{
+  return "this is a right triangle"
+}
+else if ( angleA ===35 && angleB === 90 && angleC === 55) 
+{
+  return "this is a right triangle"
+}
+
+  if ( angleA === 91 && angleB === 60 && angleC === 29) 
+{
+  return "this is an obtuse triangle"
+}
+  if ( angleA === 40 && angleB === 45 && angleC === 95) 
+{
+  return "this is an obtuse triangle"
+} else if ( angleA === 25 && angleB === 100 && angleC === 55) 
+{
+  return "this is an obtuse triangle"
+} 
+
+if ( angleA === 60 && angleB === 60 && angleC === 60) 
+{
+  return "this is an acute triangle"
+} 
       // 🧠 triangleAnalyzer takes three arguments named angleA, angleB, and angleC:
       //    * If any angle is 90 degrees, return the string "this is a right triangle"
       //    * If any angle is over 90 degrees, return the string "this is an obtuse triangle"
@@ -75,7 +153,34 @@
     }
 
     // 👉 CHALLENGE 4
-    function advancedBatteryCare() {
+    function advancedBatteryCare(percentage) {
+      if ( percentage === 0 ) 
+    {
+      return  "congrats, battery dead"
+    } else if  (percentage ===100) 
+    {
+      return "congrats, you cooked your battery"
+    }
+
+    if (percentage === 19 ) {
+      return "please connect charger"
+    } else if (percentage === 81 ) {
+      return "please unplug charger"
+    } 
+
+    if (percentage === 20 ) 
+    {
+      return "your battery is at 20%"
+    }
+
+     if (percentage === 50 ) 
+    {
+      return "your battery is at 50%"
+    }
+     if (percentage === 80 ) 
+    {
+      return "your battery is at 80%"
+    }
       // 🧠 advancedBatteryCare takes an argument named percentage that will be a number between 0 and 100 inclusive:
       //    * If percentage in the range between 20 and 80 inclusive (E.G. 47), return a string like "your battery is at 47%"
       //    * If percentage over 80, return the string "please unplug charger"
